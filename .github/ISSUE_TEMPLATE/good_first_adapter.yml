@@ -1,0 +1,54 @@
+name: Good first adapter
+description: Propose or claim a provider adapter contribution.
+title: "[adapter]: "
+labels: ["adapter", "good first issue", "needs-design"]
+body:
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Provider
+      options:
+        - local
+        - kubernetes
+        - gcp
+        - azure
+        - aws
+        - other
+    validations:
+      required: true
+  - type: dropdown
+    id: capability
+    attributes:
+      label: Capability
+      options:
+        - agent-runtime
+        - job-runner
+        - container-task
+        - service-deploy
+        - workflow-runner
+    validations:
+      required: true
+  - type: textarea
+    id: target
+    attributes:
+      label: Target runtime
+      description: Name the concrete provider service, runtime, or local mechanism.
+      placeholder: Cloud Run Jobs, Kubernetes Job, child process, Azure Container Apps Jobs, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: mapping
+    attributes:
+      label: Contract mapping
+      description: How would `provider + capability + task_type + target.mode` map to this runtime?
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Adapter boundaries
+      options:
+        - label: Provider-specific fields stay in adapter config, `target.details`, or `providerRefs`.
+          required: true
+        - label: No raw cloud credentials are passed through MCP tool payloads.
+          required: true

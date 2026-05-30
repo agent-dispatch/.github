@@ -1,55 +1,43 @@
 # AgentDispatch
 
-**Spawn cloud subagents from any MCP-capable lead agent.**
+<p align="center">
+  <img src="./assets/org-banner.svg" alt="AgentDispatch cloud subagent dispatch banner">
+</p>
 
-AgentDispatch is a provider-neutral control plane for long-running agent work. A local lead agent calls one MCP tool, AgentDispatch starts the right cloud runtime, and the response includes durable task polling plus protocol metadata for native follow-up through A2A, MCP, AG-UI, or HTTP.
+> Spawn cloud subagents from any MCP-capable lead agent.
 
-V1 targets **AWS Bedrock AgentCore Runtime**. The contract is cloud-neutral from day one so future providers can be added through adapters rather than new tools.
+AgentDispatch is the provider-neutral control plane for long-running agent work. A lead agent calls one MCP tool, gets a durable task handle back, and can keep interacting with the spawned cloud subagent through A2A, MCP, AG-UI, or HTTP metadata when the runtime supports it.
 
-## Why it exists
+## Why It Exists
 
-Local agents are strong planners, but long-running work needs different execution properties:
+Local agents are great planners. Long-running work needs different execution properties:
 
-- Cloud isolation for slow, expensive, or stateful tasks.
-- Durable task status when the lead-agent session restarts.
-- Standard cloud credential chains instead of raw credentials in tool calls.
-- Provider portability across AWS, GCP, Azure, Kubernetes, and local runtimes.
-- Native subagent interaction after spawn when the runtime supports it.
+- cloud isolation for expensive, slow, or stateful tasks
+- durable status, logs, artifacts, cancellation, and cleanup
+- named account profiles instead of raw cloud credentials in prompts
+- provider portability across AWS, GCP, Azure, Kubernetes, and local runtimes
+- native follow-up with the cloud subagent after spawn
 
-## Agent-facing workflow
+## V1
 
-```mermaid
-sequenceDiagram
-  participant Lead as Lead agent
-  participant MCP as AgentDispatch MCP
-  participant Core as Core runtime
-  participant Adapter as Cloud adapter
-  participant Agent as Cloud subagent
+V1 targets **AWS Bedrock AgentCore Runtime** with a cloud-neutral contract:
 
-  Lead->>MCP: spawn_cloud_agent(instruction)
-  MCP->>Core: Resolve runtime profile
-  Core->>Adapter: Provision or reuse target
-  Adapter->>Agent: Start task
-  Adapter-->>Core: Events and provider refs
-  Core-->>MCP: task_id + cloud_agent metadata
-  Lead->>MCP: Poll status/logs/result
-  Lead->>Agent: Optional A2A/MCP/HTTP follow-up
+```text
+provider + capability + task_type + target.mode
 ```
 
-## Repositories
+That means new providers become adapter packages, not new tool names every agent needs to learn.
 
-| Repository | Package | Purpose |
-| --- | --- | --- |
-| [`core`](https://github.com/agent-dispatch/core) | `@agent-dispatch/core` | Provider-neutral models, adapter contract, routing, and durable task orchestration. |
-| [`mcp-server`](https://github.com/agent-dispatch/mcp-server) | `@agent-dispatch/mcp-server` | MCP tools including `spawn_cloud_agent`, status, logs, results, and cancellation. |
-| [`adapter-aws-agentcore`](https://github.com/agent-dispatch/adapter-aws-agentcore) | `@agent-dispatch/adapter-aws-agentcore` | AWS AgentCore Runtime adapter for session and runtime modes. |
-| [`worker-agentcore`](https://github.com/agent-dispatch/worker-agentcore) | `@agent-dispatch/worker-agentcore` | Reference cloud-side AgentCore worker with A2A-compatible endpoints. |
-| [`sdk-js`](https://github.com/agent-dispatch/sdk-js) | `@agent-dispatch/sdk` | TypeScript client for apps, scripts, and agent frameworks. |
-| [`cli`](https://github.com/agent-dispatch/cli) | `@agent-dispatch/cli` | Configuration bootstrap, diagnostics, and local smoke tests. |
-| [`store-sqlite`](https://github.com/agent-dispatch/store-sqlite) | `@agent-dispatch/store-sqlite` | Local durable task, event, log, artifact, and provider-ref store. |
-| [`adapter-template`](https://github.com/agent-dispatch/adapter-template) | `@agent-dispatch/adapter-template` | Template for adding GCP, Azure, Kubernetes, local, or future providers. |
-| [`docs`](https://github.com/agent-dispatch/docs) | `@agent-dispatch/docs` | Architecture, quickstarts, provider guides, and operational notes. |
-| [`website`](https://github.com/agent-dispatch/website) | `@agent-dispatch/website` | Static website package for the project. |
+## Start Here
+
+| Repo | What to read |
+| --- | --- |
+| [`mcp-server`](https://github.com/agent-dispatch/mcp-server) | MCP tool surface: spawn, preflight, status, logs, results, cancel. |
+| [`core`](https://github.com/agent-dispatch/core) | Provider-neutral runtime model and adapter contract. |
+| [`adapter-aws-agentcore`](https://github.com/agent-dispatch/adapter-aws-agentcore) | AWS AgentCore Runtime implementation. |
+| [`worker-agentcore`](https://github.com/agent-dispatch/worker-agentcore) | Reference cloud-side worker with HTTP and A2A endpoints. |
+| [`cli`](https://github.com/agent-dispatch/cli) | Config bootstrap, diagnostics, task dispatch, polling, and A2A follow-up. |
+| [`docs`](https://github.com/agent-dispatch/docs) | Architecture, quickstart, adapter guide, and launch checklist. |
 
 ## Quickstart
 
@@ -64,12 +52,8 @@ agentdispatch init \
 agentdispatch doctor
 ```
 
-Then connect your MCP-capable lead agent to `@agent-dispatch/mcp-server` and ask it to call `spawn_cloud_agent` for work that should leave the local runtime.
+Then connect your lead agent to `@agent-dispatch/mcp-server` and ask it to call `spawn_cloud_agent` for work that should run outside the local session.
 
-## Design principles
+## The Pitch
 
-- **Stable MCP contract:** new providers should not require new lead-agent tools.
-- **Provider isolation:** provider SDKs and provider-specific types stay inside adapter packages.
-- **Account profiles:** users configure accounts once; agents reference names.
-- **Durable state:** task status, logs, artifacts, provider refs, and cleanup state survive local restarts.
-- **Interaction handoff:** the spawn response can include A2A, MCP, AG-UI, or HTTP metadata when the cloud runtime supports native follow-up.
+AgentDispatch makes cloud delegation feel like a normal agent tool call, while preserving the production properties teams need: account boundaries, durable handles, normalized events, cleanup, artifacts, and a path to multiple clouds.

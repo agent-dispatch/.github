@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest an AgentDispatch capability, integration, or workflow improvement.
+title: "[feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - MCP tool surface
+        - Core runtime model
+        - SDK
+        - CLI
+        - Store
+        - AWS AgentCore adapter
+        - Worker framework
+        - Docs / website
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or operator problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed shape
+      description: Describe the API, CLI, MCP, adapter, or docs behavior you expect.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility notes
+      description: Explain whether this changes the stable provider-neutral MCP contract or can be implemented behind an adapter/package boundary.

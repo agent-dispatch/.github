@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Architecture docs
+    url: https://github.com/agent-dispatch/docs
+    about: Start here for provider-neutral routing, adapter boundaries, and AgentCore setup.
+  - name: MCP server
+    url: https://github.com/agent-dispatch/mcp-server
+    about: Open MCP tool-surface bugs and feature requests in the MCP server repo when possible.

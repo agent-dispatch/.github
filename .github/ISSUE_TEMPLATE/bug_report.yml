@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a reproducible AgentDispatch bug.
+title: "[bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package or repo
+      options:
+        - core
+        - mcp-server
+        - sdk-js
+        - cli
+        - store-sqlite
+        - adapter-aws-agentcore
+        - worker-agentcore
+        - adapter-template
+        - docs
+        - website
+        - unsure
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Include commands, config shape, MCP tool call, and relevant task IDs or logs. Redact secrets.
+      placeholder: |
+        1. Run ...
+        2. Call ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, package version, OS, provider, target mode, and protocol.
+      placeholder: |
+        Node:
+        Package:
+        OS:
+        Provider:
+        Target mode:
+        Protocol:
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I redacted credentials, tokens, runtime ARNs if sensitive, and task logs that contain private data.
+          required: true
+        - label: I ran the relevant package test or local verification gate when possible.
+          required: false
