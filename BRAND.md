@@ -22,7 +22,7 @@ These assets are intended for the `agent-dispatch/.github` organization profile 
 
 AgentDispatch should feel like a serious developer infrastructure project:
 
-- dark technical backdrop
-- violet, cyan, orange, and pink route accents
-- lead-agent node dispatching to three cloud/subagent targets
+- light executive-infrastructure backdrop
+- ink typography with restrained red, teal, violet, and gold accents
+- lead-agent node dispatching to cloud/subagent targets
 - no mascots, no robot faces, no provider logos, no fake UI text
