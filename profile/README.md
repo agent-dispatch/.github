@@ -4,6 +4,12 @@
   <img src="./assets/org-banner.svg" alt="AgentDispatch cloud subagent dispatch banner">
 </p>
 
+<p align="center">
+  <a href="https://github.com/agent-dispatch/docs/actions/workflows/local-e2e.yml"><img alt="Local E2E" src="https://github.com/agent-dispatch/docs/actions/workflows/local-e2e.yml/badge.svg"></a>
+  <a href="https://github.com/agent-dispatch/docs/actions/workflows/ci.yml"><img alt="Docs CI" src="https://github.com/agent-dispatch/docs/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/agent-dispatch/website/actions/workflows/pages.yml"><img alt="Website" src="https://github.com/agent-dispatch/website/actions/workflows/pages.yml/badge.svg"></a>
+</p>
+
 > Spawn cloud subagents from any MCP-capable lead agent.
 
 AgentDispatch is the provider-neutral control plane for long-running agent work. A lead agent calls one MCP tool, gets a durable task handle back, and can keep interacting with the spawned cloud subagent through A2A, MCP, AG-UI, or HTTP metadata when the runtime supports it.
@@ -44,6 +50,7 @@ That means new providers become adapter packages, not new tool names every agent
 
 - [Verification matrix](https://github.com/agent-dispatch/docs/blob/main/docs/verification-matrix.md) explains what local E2E proves and what still requires live AWS.
 - [Live AWS verification](https://github.com/agent-dispatch/docs/blob/main/docs/live-aws-verification.md) is the opt-in runbook for real AgentCore preflight and dispatch evidence.
+- The docs repo owns the manual `Live AWS Verification` workflow for producing the JSON evidence artifact when real AWS secrets are configured.
 
 ## Quickstart
 

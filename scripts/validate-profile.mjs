@@ -39,9 +39,12 @@ for (const file of requiredFiles) {
 
 const profileReadme = await readText("profile/README.md");
 mustInclude(profileReadme, "./assets/org-banner.svg", "profile README must render the org banner");
+mustInclude(profileReadme, "actions/workflows/local-e2e.yml/badge.svg", "profile README must show local E2E badge");
+mustInclude(profileReadme, "actions/workflows/pages.yml/badge.svg", "profile README must show website badge");
 mustInclude(profileReadme, "sdk-js", "profile README must link to the SDK repo");
 mustInclude(profileReadme, "verification-matrix.md", "profile README must link to the verification matrix");
 mustInclude(profileReadme, "live-aws-verification.md", "profile README must link to live AWS verification");
+mustInclude(profileReadme, "Live AWS Verification", "profile README must mention the live evidence workflow");
 mustInclude(profileReadme, "good_first_worker.yml", "profile README must link to worker contribution path");
 mustInclude(profileReadme, "architecture_request.yml", "profile README must link to architecture contribution path");
 
