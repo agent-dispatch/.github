@@ -1,0 +1,42 @@
+name: Architecture request
+description: Propose a provider-neutral design change before implementation.
+title: "[architecture]: "
+labels: ["architecture", "needs-design"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - artifact browsing
+        - provider-neutral live preflight
+        - runtime resolution
+        - task lifecycle
+        - protocol handoff
+        - policy and account profiles
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What design gap or user workflow needs a better architecture?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed contract
+      description: Describe the provider-neutral API, model, CLI, MCP, or storage shape.
+    validations:
+      required: true
+  - type: checkboxes
+    id: compatibility
+    attributes:
+      label: Compatibility
+      options:
+        - label: The proposal keeps provider-specific SDK behavior inside adapter packages.
+          required: true
+        - label: The proposal avoids passing raw cloud credentials through MCP tool payloads.
+          required: true

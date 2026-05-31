@@ -15,6 +15,8 @@ const requiredFiles = [
   ".github/ISSUE_TEMPLATE/bug_report.yml",
   ".github/ISSUE_TEMPLATE/feature_request.yml",
   ".github/ISSUE_TEMPLATE/good_first_adapter.yml",
+  ".github/ISSUE_TEMPLATE/good_first_worker.yml",
+  ".github/ISSUE_TEMPLATE/architecture_request.yml",
   "profile/assets/org-banner.svg",
   "profile/assets/org-banner.png",
   "profile/assets/org-logo.svg",
@@ -37,6 +39,9 @@ for (const file of requiredFiles) {
 
 const profileReadme = await readText("profile/README.md");
 mustInclude(profileReadme, "./assets/org-banner.svg", "profile README must render the org banner");
+mustInclude(profileReadme, "sdk-js", "profile README must link to the SDK repo");
+mustInclude(profileReadme, "good_first_worker.yml", "profile README must link to worker contribution path");
+mustInclude(profileReadme, "architecture_request.yml", "profile README must link to architecture contribution path");
 
 const brand = await readText("BRAND.md");
 for (const asset of ["org-banner", "org-logo", "repo-social-preview"]) {

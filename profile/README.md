@@ -37,6 +37,7 @@ That means new providers become adapter packages, not new tool names every agent
 | [`adapter-aws-agentcore`](https://github.com/agent-dispatch/adapter-aws-agentcore) | AWS AgentCore Runtime implementation. |
 | [`worker-agentcore`](https://github.com/agent-dispatch/worker-agentcore) | Reference cloud-side worker with HTTP and A2A endpoints. |
 | [`cli`](https://github.com/agent-dispatch/cli) | Config bootstrap, diagnostics, task dispatch, polling, and A2A follow-up. |
+| [`sdk-js`](https://github.com/agent-dispatch/sdk-js) | TypeScript client for apps, scripts, CLIs, and agent frameworks. |
 | [`docs`](https://github.com/agent-dispatch/docs) | Architecture, quickstart, adapter guide, and launch checklist. |
 
 ## Quickstart
@@ -57,3 +58,11 @@ Then connect your lead agent to `@agent-dispatch/mcp-server` and ask it to call 
 ## The Pitch
 
 AgentDispatch makes cloud delegation feel like a normal agent tool call, while preserving the production properties teams need: account boundaries, durable handles, normalized events, cleanup, artifacts, and a path to multiple clouds.
+
+## Contribute
+
+Good first contribution paths are intentionally concrete:
+
+- [New provider adapter](https://github.com/agent-dispatch/.github/issues/new?template=good_first_adapter.yml)
+- [Worker framework integration](https://github.com/agent-dispatch/.github/issues/new?template=good_first_worker.yml)
+- [Architecture improvement](https://github.com/agent-dispatch/.github/issues/new?template=architecture_request.yml)

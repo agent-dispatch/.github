@@ -1,0 +1,42 @@
+name: Good first worker framework
+description: Propose or claim a cloud-side worker framework integration.
+title: "[worker]: "
+labels: ["worker", "good first issue", "needs-design"]
+body:
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework
+      options:
+        - command-backed worker
+        - LangChain
+        - LangGraph
+        - OpenAI Agents
+        - custom HTTP worker
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What kind of cloud-side agent work should this worker support?
+      placeholder: Repo audit, data extraction, long-running coding task, research agent, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: endpoints
+    attributes:
+      label: Runtime surface
+      description: Which HTTP, A2A, MCP, or AG-UI endpoints would this worker expose?
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Worker boundaries
+      options:
+        - label: The worker can be invoked by a provider adapter without changing the MCP tool contract.
+          required: true
+        - label: Logs, result, artifacts, and errors can be normalized into AgentDispatch task events.
+          required: true
