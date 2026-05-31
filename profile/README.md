@@ -40,6 +40,11 @@ That means new providers become adapter packages, not new tool names every agent
 | [`sdk-js`](https://github.com/agent-dispatch/sdk-js) | TypeScript client for apps, scripts, CLIs, and agent frameworks. |
 | [`docs`](https://github.com/agent-dispatch/docs) | Architecture, quickstart, adapter guide, and launch checklist. |
 
+## Verification
+
+- [Verification matrix](https://github.com/agent-dispatch/docs/blob/main/docs/verification-matrix.md) explains what local E2E proves and what still requires live AWS.
+- [Live AWS verification](https://github.com/agent-dispatch/docs/blob/main/docs/live-aws-verification.md) is the opt-in runbook for real AgentCore preflight and dispatch evidence.
+
 ## Quickstart
 
 ```bash
