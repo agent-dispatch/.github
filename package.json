@@ -5,5 +5,26 @@
   "type": "module",
   "scripts": {
     "test": "node scripts/validate-profile.mjs"
-  }
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agent-dispatch/.github.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agent-dispatch/.github/issues"
+  },
+  "homepage": "https://github.com/agent-dispatch",
+  "keywords": [
+    "agentdispatch",
+    "github-profile",
+    "community-health",
+    "mcp",
+    "cloud-agents",
+    "ai-agents",
+    "subagents"
+  ]
 }
