@@ -48,6 +48,7 @@ That means new providers become adapter packages, not new tool names every agent
 
 For copy-paste lead-agent prompts, use the [Lead agent prompt kit](https://github.com/agent-dispatch/docs/blob/main/docs/lead-agent-prompt-kit.md).
 For demo paths and claim boundaries, use the [Examples index](https://github.com/agent-dispatch/docs/blob/main/docs/examples.md).
+For concrete background-task prompts, use the [Use cases playbook](https://github.com/agent-dispatch/docs/blob/main/docs/use-cases.md).
 
 ## Verification
 

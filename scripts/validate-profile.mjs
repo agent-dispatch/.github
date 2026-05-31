@@ -43,6 +43,7 @@ mustInclude(profileReadme, "actions/workflows/local-e2e.yml/badge.svg", "profile
 mustInclude(profileReadme, "actions/workflows/pages.yml/badge.svg", "profile README must show website badge");
 mustInclude(profileReadme, "sdk-js", "profile README must link to the SDK repo");
 mustInclude(profileReadme, "examples.md", "profile README must link to the examples index");
+mustInclude(profileReadme, "use-cases.md", "profile README must link to use cases");
 mustInclude(profileReadme, "lead-agent-prompt-kit.md", "profile README must link to the lead agent prompt kit");
 mustInclude(profileReadme, "verification-matrix.md", "profile README must link to the verification matrix");
 mustInclude(profileReadme, "release-runbook.md", "profile README must link to the release runbook");
