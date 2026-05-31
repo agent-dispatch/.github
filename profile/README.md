@@ -79,6 +79,7 @@ AgentDispatch makes cloud delegation feel like a normal agent tool call, while p
 Good first contribution paths are intentionally concrete:
 
 - [Contributor map](https://github.com/agent-dispatch/docs/blob/main/docs/contributor-map.md)
+- [Contributor issue bank](https://github.com/agent-dispatch/docs/blob/main/docs/contributor-issue-bank.md)
 - [New provider adapter](https://github.com/agent-dispatch/.github/issues/new?template=good_first_adapter.yml)
 - [Worker framework integration](https://github.com/agent-dispatch/.github/issues/new?template=good_first_worker.yml)
 - [Architecture improvement](https://github.com/agent-dispatch/.github/issues/new?template=architecture_request.yml)

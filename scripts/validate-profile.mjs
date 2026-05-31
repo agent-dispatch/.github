@@ -46,6 +46,7 @@ mustInclude(profileReadme, "lead-agent-prompt-kit.md", "profile README must link
 mustInclude(profileReadme, "verification-matrix.md", "profile README must link to the verification matrix");
 mustInclude(profileReadme, "release-runbook.md", "profile README must link to the release runbook");
 mustInclude(profileReadme, "contributor-map.md", "profile README must link to the contributor map");
+mustInclude(profileReadme, "contributor-issue-bank.md", "profile README must link to the contributor issue bank");
 mustInclude(profileReadme, "live-aws-verification.md", "profile README must link to live AWS verification");
 mustInclude(profileReadme, "Live AWS Verification", "profile README must mention the live evidence workflow");
 mustInclude(profileReadme, "good_first_worker.yml", "profile README must link to worker contribution path");
