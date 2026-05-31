@@ -44,6 +44,7 @@ mustInclude(profileReadme, "actions/workflows/pages.yml/badge.svg", "profile REA
 mustInclude(profileReadme, "sdk-js", "profile README must link to the SDK repo");
 mustInclude(profileReadme, "lead-agent-prompt-kit.md", "profile README must link to the lead agent prompt kit");
 mustInclude(profileReadme, "verification-matrix.md", "profile README must link to the verification matrix");
+mustInclude(profileReadme, "release-runbook.md", "profile README must link to the release runbook");
 mustInclude(profileReadme, "contributor-map.md", "profile README must link to the contributor map");
 mustInclude(profileReadme, "live-aws-verification.md", "profile README must link to live AWS verification");
 mustInclude(profileReadme, "Live AWS Verification", "profile README must mention the live evidence workflow");

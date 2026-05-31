@@ -52,6 +52,7 @@ For copy-paste lead-agent prompts, use the [Lead agent prompt kit](https://githu
 
 - [Verification matrix](https://github.com/agent-dispatch/docs/blob/main/docs/verification-matrix.md) explains what local E2E proves and what still requires live AWS.
 - [Live AWS verification](https://github.com/agent-dispatch/docs/blob/main/docs/live-aws-verification.md) is the opt-in runbook for real AgentCore preflight and dispatch evidence.
+- [Release runbook](https://github.com/agent-dispatch/docs/blob/main/docs/release-runbook.md) documents package order, Trusted Publisher setup, and npm provenance.
 - The docs repo owns the manual `Live AWS Verification` workflow for producing the JSON evidence artifact when real AWS secrets are configured.
 
 ## Quickstart
