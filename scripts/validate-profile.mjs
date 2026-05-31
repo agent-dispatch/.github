@@ -43,6 +43,7 @@ mustInclude(profileReadme, "actions/workflows/local-e2e.yml/badge.svg", "profile
 mustInclude(profileReadme, "actions/workflows/pages.yml/badge.svg", "profile README must show website badge");
 mustInclude(profileReadme, "sdk-js", "profile README must link to the SDK repo");
 mustInclude(profileReadme, "verification-matrix.md", "profile README must link to the verification matrix");
+mustInclude(profileReadme, "contributor-map.md", "profile README must link to the contributor map");
 mustInclude(profileReadme, "live-aws-verification.md", "profile README must link to live AWS verification");
 mustInclude(profileReadme, "Live AWS Verification", "profile README must mention the live evidence workflow");
 mustInclude(profileReadme, "good_first_worker.yml", "profile README must link to worker contribution path");
