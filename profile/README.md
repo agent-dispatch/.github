@@ -48,11 +48,13 @@ That means new providers become adapter packages, not new tool names every agent
 
 For copy-paste lead-agent prompts, use the [Lead agent prompt kit](https://github.com/agent-dispatch/docs/blob/main/docs/lead-agent-prompt-kit.md).
 For demo paths and claim boundaries, use the [Examples index](https://github.com/agent-dispatch/docs/blob/main/docs/examples.md).
+For a sanitized no-cloud demo transcript plus JSON report, use the [Launch evidence workflow](https://github.com/agent-dispatch/docs/blob/main/docs/launch-evidence.md).
 For concrete background-task prompts, use the [Use cases playbook](https://github.com/agent-dispatch/docs/blob/main/docs/use-cases.md).
 
 ## Verification
 
 - [Verification matrix](https://github.com/agent-dispatch/docs/blob/main/docs/verification-matrix.md) explains what local E2E proves and what still requires live AWS.
+- [Launch evidence](https://github.com/agent-dispatch/docs/blob/main/docs/launch-evidence.md) shows how to retain local demo, local E2E, npm, and live AWS proof artifacts.
 - [Live AWS verification](https://github.com/agent-dispatch/docs/blob/main/docs/live-aws-verification.md) is the opt-in runbook for real AgentCore preflight and dispatch evidence.
 - [Release runbook](https://github.com/agent-dispatch/docs/blob/main/docs/release-runbook.md) documents package order, Trusted Publisher setup, and npm provenance.
 - The docs repo owns the manual `Live AWS Verification` workflow for producing the JSON evidence artifact when real AWS secrets are configured.
